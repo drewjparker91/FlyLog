@@ -7,17 +7,16 @@ function Log(props){
   return (
     <React.Fragment>
       <div onClick = {() => props.whenLogClicked(props.id)}>
-        <h3>{props.name}</h3>
-        <h5></h5>
+        <h3>{props.author}</h3>
+        <p>Cuaght On: {props.createdAt}</p>
       </div>
     </React.Fragment>
   );
 }
 
 Log.propTypes = {
-name: PropTypes.string,
+author: PropTypes.string,
 location: propTypes.string,
-date: propTypes.
 species: propTypes.string,
 length: propTypes.string,
 weight: propTypes.string,
@@ -25,6 +24,7 @@ fly: propTypes.string,
 waterCond: propTypes.string,
 weather: propTypes.string,
 createdAt: PropTypes.string,
+// image: PropTypes.symbol,
 id: PropTypes.string,
 whenLogClicked: PropTypes.func
 };

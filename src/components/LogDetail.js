@@ -16,8 +16,16 @@ function LogDetail(props){
         <h5>Water Condition: {log.WaterCond}</h5>
         <h5>Weather Conditions: {log.weatherCond}</h5>
         <Button variant="warning" onClick={props.onClickingEdit}>Edit Post</Button>
-        <Button variant="danger" onClick={() => onClickingDelete(keg.id)}>Delete Post</Button>
+        <Button variant="danger" onClick={() => onClickingDelete(log.id)}>Delete Post</Button>
       </React.Fragment>
     </div>
-  )
+  );
 }
+
+LogDetail.propTypes = {
+  log: PropTypes.object,
+  onClickingDelete: PropTypes.func,
+  onClickingEdit: PropTypes.func
+}
+
+export default LogDetail;
