@@ -69,10 +69,3 @@ function ReusableForm(props){
     </React.Fragment>
   )
 }
-
-
-
-
-
-waterCond: propTypes.string,
-weather: propTypes.string,
