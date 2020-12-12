@@ -4,7 +4,7 @@ export default (state = null, action) => {
   const { selectedLog } = action;
   switch (action.type) {
   case a.SELECTED_LOG:
-    const newState = selectedPost;
+    const newState = selectedLog;
     return newState;
   case a.UNSELECT_LOG:
     const newState2 = null;

@@ -9,16 +9,15 @@ import PropTypes from 'prop-types';
 import * as a from './../actions';
 
 class LogControl extends React.Component {
-
+  
   handleClick = () => {
-    const {dispatch} = this.props
-    if (this.props.selectedLog != null) {
+    const { dispatch } = this.props
+    if (this.props.selectedLog != null) {     
       const action = a.unselectLog
-      // const action2 = a.toggleEditForm
       dispatch(action);
     } else {
-      const action = a.toggleNewForm
-      dispatch(action);
+      const action3 = a.toggleNewForm
+      dispatch(action3);
     }
   }
 

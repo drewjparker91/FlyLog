@@ -3,7 +3,7 @@ import * as a from './ActionTypes';
 export const addLog = (log) => {
   const{author, species, length, weight, fly, waterCond, weather, createdAt, id} = log;
   return {
-    type:a.ADD_LOG,
+    type: a.ADD_LOG,
     author: author,
     species: species, 
     length: length,
@@ -21,11 +21,11 @@ export const deleteLog = id => ({
   id
 })
 
-export const toggleEditForm = () => ({
+export const toggleEditForm = ({
   type: a.TOGGLE_EDIT_FORM
 });
 
-export const toggleNewForm = () => ({
+export const toggleNewForm = ({
   type: a.TOGGLE_NEW_FORM
 });
 
@@ -36,7 +36,7 @@ export const selectedLog = (log) => {
   }
 }
 
-export const unselectLog = () => ({
+export const unselectLog = ({
   type: a.UNSELECT_LOG
 })
 

@@ -64,8 +64,17 @@ function ReusableForm(props){
           defaultValue = {props.weather ? props.weather : ''}
           placeholder = "Weather Conditions"
           />
+          <hr/>
+          <Button variant="success" type='submit'>{props.buttonText}</Button>
         </form>
       </div>
     </React.Fragment>
   )
 }
+
+ReusableForm.propTypes = {
+  formSubmissionHandler: PropTypes.func,
+  buttonText: PropTypes.string
+}
+
+export default ReusableForm;

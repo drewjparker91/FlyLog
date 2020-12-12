@@ -1,10 +1,12 @@
+import React from 'react';
+import { v4 } from 'uuid';
 import PropTypes from "prop-types";
 import ReusableForm from "./ReusableForm";
 
 const log = {}
 log.id = v4()
 
-function newLogForm(props){
+function NewLogForm(props){
 
   const today = new Date();
   const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
@@ -20,7 +22,7 @@ function newLogForm(props){
       fly: event.target.fly.value,
       waterCond: event.target.waterCond.value,
       weather: event.target.weather.value,
-      createdAt: event.target.createdAt.value,
+      createdAt: date,
       id: v4()
     });
   }

@@ -1,7 +1,6 @@
 import React from "react";
 import ReusableForm from "./ReusableForm";
 import PropTypes from "prop-types";
-import LogList from "./LogList";
 
 function EditLogForm(props) {
   const { log } = props;
@@ -17,6 +16,7 @@ function EditLogForm(props) {
       fly: event.target.fly.value,
       waterCond: event.target.waterCond.value,
       weather: event.target.weather.value,
+      createdAt: log.createdAt,
       id: log.id
     });
   }
