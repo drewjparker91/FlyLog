@@ -1,10 +1,11 @@
 import * as a from './ActionTypes';
 
 export const addLog = (log) => {
-  const{author, species, length, weight, fly, waterCond, weather, createdAt, id} = log;
+  const{author, location, species, length, weight, fly, waterCond, weather, createdAt, id} = log;
   return {
     type: a.ADD_LOG,
     author: author,
+    location: location,
     species: species, 
     length: length,
     weight: weight,

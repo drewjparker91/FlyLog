@@ -1,3 +1,10 @@
+##### __Created:__ 11/20/2020
+##### By _**Drew Parker**_  
+
+## Description
+
+Day One I was able to get the main skeleton of the app up and do some minor styling. Currently looking at importing stylesheets but need to read more about them.  Also did a lot of research in the afternoon about how to pin locations using the Google API.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -5,9 +5,17 @@ import Col from 'react-bootstrap/Col'
 
 function LogList(props){
 
+  const topListStyle = {
+    textAlign: "center",
+    fontFamily: 'Berkshire Swash',
+    color: 'rgba(42,82,66)'
+  }
+
   return (
     <React.Fragment>
-      <h1>Recent Catches</h1>
+      <div style={topListStyle}>
+        <h1>Recent Catches</h1>
+      </div>
       <hr/>
       <Col>
         {Object.values(props.logList).map((log) =>

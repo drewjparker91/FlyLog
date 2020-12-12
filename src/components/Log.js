@@ -8,7 +8,7 @@ function Log(props){
     <React.Fragment>
       <div onClick = {() => props.whenLogClicked(props.id)}>
         <h3>{props.author}</h3>
-        <p>Cuaght On: {props.createdAt}</p>
+        <p>Caught On: {props.createdAt}</p>
       </div>
     </React.Fragment>
   );
