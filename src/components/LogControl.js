@@ -8,8 +8,16 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as a from './../actions';
 
+const buttonPosition = {
+  position: 'fixed',
+  bottom: 80,
+  legft: 50
+}
+
 class LogControl extends React.Component {
   
+  
+
   handleClick = () => {
     const { dispatch } = this.props
     if (this.props.selectedLog != null) {     
@@ -95,7 +103,9 @@ class LogControl extends React.Component {
     return (
       <React.Fragment>
         {currentlyVisibleState}
-        <Button variant="success" onClick={this.handleClick}>{buttonText}</Button>
+        <div style={buttonPosition}>
+          <button id="fart" onClick={this.handleClick}>{buttonText}</button>
+        </div>
       </React.Fragment>
     );
   }

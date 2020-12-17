@@ -1,14 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Log from "./Log";
-import Col from 'react-bootstrap/Col'
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+
 
 function LogList(props){
 
   const topListStyle = {
     textAlign: "center",
     fontFamily: 'Berkshire Swash',
-    color: 'rgba(42,82,66)'
+    color: 'rgba(42,82,66)',
+    marginBottom: '20px'
   }
 
   return (
@@ -16,10 +19,11 @@ function LogList(props){
       <div style={topListStyle}>
         <h1>Recent Catches</h1>
       </div>
-      <hr/>
+      {/* <hr/> */}
+      
       <Col>
         {Object.values(props.logList).map((log) =>
-        <div className="card">
+        <div className="card"> 
           <Log
           whenLogClicked={props.onLogSelection}
           author={log.author}
@@ -33,10 +37,11 @@ function LogList(props){
           createdAt={log.createdAt}
           id={log.id}
           key={log.id}
-          />
+          />  
         </div>
         )}
       </Col>
+      
     </React.Fragment>
   );
 }

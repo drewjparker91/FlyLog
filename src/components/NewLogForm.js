@@ -8,6 +8,15 @@ log.id = v4()
 
 function NewLogForm(props){
 
+  const newFormTitle = {
+    textAlign: 'center',
+    fontFamily: 'Berkshire Swash',
+    color: 'rgba(42,82,66)'
+  }
+
+  const newFormStyle = {
+    textAlign: 'center'
+  }
   const today = new Date();
   const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 
@@ -29,12 +38,15 @@ function NewLogForm(props){
 
   return (
     <React.Fragment>
-      <h1>Add a new log</h1>
-      <hr/>
-      <ReusableForm
-      formSubmissionHandler={handleNewLogFormSubmission}
-      buttonText="Add Post"
-      />
+      <div style = {newFormStyle}>
+        <div style={newFormTitle}>
+          <h2>Add a new log</h2>
+        </div>
+        <ReusableForm
+        formSubmissionHandler={handleNewLogFormSubmission}
+        buttonText="Add Post"
+        />
+      </div>
     </React.Fragment>
   );
 }

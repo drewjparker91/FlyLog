@@ -4,12 +4,22 @@ import { propTypes } from 'react-bootstrap/esm/Image';
 
 function Log(props){
 
+  const logStyle = {
+    backgroundColor: '#D4916D',
+    // border: 0
+    padding: '10px'
+  }
+
   return (
     <React.Fragment>
-      <div onClick = {() => props.whenLogClicked(props.id)}>
-        <h3>{props.author}</h3>
-        <p>Caught On: {props.createdAt}</p>
-      </div>
+      
+        <div style={logStyle}>
+          <div onClick = {() => props.whenLogClicked(props.id)}>
+            <h3>{props.author}</h3>
+            <p>Caught On: {props.createdAt}</p>
+          </div>
+        </div>
+      
     </React.Fragment>
   );
 }

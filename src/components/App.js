@@ -1,12 +1,18 @@
 import React from "react";
-import Header from "./Header";
+import FinalHeader from "./FinalHeader";
+import Footer from "./Footer";
 import LogControl from "./LogControl";
 
 function App(){
   return (
     <React.Fragment>
-      <Header />
-      <LogControl />
+      <div className='contain'>
+        <div className='header'>
+          <FinalHeader />
+        </div>
+        <LogControl />
+        <Footer />
+      </div>
     </React.Fragment>
   );
   }
