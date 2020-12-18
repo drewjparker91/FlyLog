@@ -16,10 +16,10 @@ import * as a from './ActionTypes';
 //   }
 // }
 
-export const deleteLog = id => ({
-  type: a.DELETE_LOG,
-  id
-})
+// export const deleteLog = id => ({
+//   type: a.DELETE_LOG,
+//   id
+// })
 
 export const toggleEditForm = ({
   type: a.TOGGLE_EDIT_FORM
