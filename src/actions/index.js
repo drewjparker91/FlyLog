@@ -1,21 +1,20 @@
 import * as a from './ActionTypes';
 
-export const addLog = (log) => {
-  const{author, location, species, length, weight, fly, waterCond, weather, createdAt, id} = log;
-  return {
-    type: a.ADD_LOG,
-    author: author,
-    location: location,
-    species: species, 
-    length: length,
-    weight: weight,
-    fly: fly,
-    waterCond: waterCond,
-    weather: weather,
-    createdAt: createdAt,
-    id: id
-  }
-}
+// export const addLog = (log) => {
+//   const{author, location, species, length, weight, fly, waterCond, createdAt, id} = log;
+//   return {
+//     type: a.ADD_LOG,
+//     author: author,
+//     location: location,
+//     species: species, 
+//     length: length,
+//     weight: weight,
+//     fly: fly,
+//     waterCond: waterCond,
+//     createdAt: createdAt,
+//     id: id
+//   }
+// }
 
 export const deleteLog = id => ({
   type: a.DELETE_LOG,

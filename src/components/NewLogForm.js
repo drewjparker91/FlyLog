@@ -2,7 +2,7 @@ import React from 'react';
 
 import PropTypes from "prop-types";
 import ReusableForm from "./ReusableForm";
-import { useFireStore } from 'react-redux-firebase'
+import { useFirestore } from 'react-redux-firebase'
 
 
 function NewLogForm(props){
@@ -48,7 +48,7 @@ function NewLogForm(props){
           <h2>Add a new log</h2>
         </div>
         <ReusableForm
-        formSubmissionHandler={handleNewLogFormSubmission}
+        formSubmissionHandler={addLogToFirestore}
         buttonText="Add Post"
         />
       </div>

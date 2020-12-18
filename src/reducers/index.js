@@ -3,6 +3,8 @@ import logListReducer from './log-list-reducer';
 import selectedLogReducer from './selected-log-reducer';
 import editLogReducer from './edit-log-reducer';
 import { combineReducers } from 'redux';
+import { firestoreReducer } from 'redux-firestore';
+
 
 const rootReducer = combineReducers({
   formVisibleOnPage: formVisibleReducer,

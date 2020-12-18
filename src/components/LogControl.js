@@ -31,9 +31,9 @@ class LogControl extends React.Component {
 
   handleAddingNewLogToList = (newLog) => {
     const {dispatch} = this.props;
-    const action = a.addLog(newLog);
+    // const action = a.addLog(newLog);
     const action2 = a.toggleNewForm;
-    dispatch(action);
+    // dispatch(action);
     dispatch(action2);
   }
 
@@ -58,15 +58,15 @@ class LogControl extends React.Component {
     dispatch(action);
   }
 
-  handleEditingLogInList = (logToEdit) => {
-    const {dispatch} = this.props;
-    const action = a.addLog(logToEdit);
-    const action2 = a.unselectLog;
-    const action3 = a.toggleEditForm;
-    dispatch(action);
-    dispatch(action2);
-    dispatch(action3);
-  }
+  // handleEditingLogInList = (logToEdit) => {
+  //   const {dispatch} = this.props;
+  //   const action = a.addLog(logToEdit);
+  //   const action2 = a.unselectLog;
+  //   const action3 = a.toggleEditForm;
+  //   dispatch(action);
+  //   dispatch(action2);
+  //   dispatch(action3);
+  // }
 
   render(){
     let currentlyVisibleState = null;
