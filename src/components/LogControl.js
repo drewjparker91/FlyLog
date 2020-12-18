@@ -7,6 +7,8 @@ import Button from 'react-bootstrap/button';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as a from './../actions';
+import { withFirestore } from 'react-redux-firebase'
+import Log from './Log';
 
 const buttonPosition = {
   position: 'fixed',
@@ -39,9 +41,22 @@ class LogControl extends React.Component {
 
   handleChangingSelectedLog = (id) => {
     const {dispatch} = this.props;
-    const log = this.props.masterLogList[id];
-    const action = a.selectedLog(log);
-    dispatch(action);
+    this.props.firestore.get({collection: 'logs', doc: id}).then((log) => {
+      const firestoreLog = {
+        author: log.get("author"),
+        location: log.get("location"),
+        species: log.get("species"),
+        length: log.get("length"),
+        weight: log.get("weight"),
+        fly: log.get("fly"),
+        waterCond: log.get("waterCond"),
+        createdAt: log.get("createdAt"),
+        id: log.id
+      }
+      const action = a.selectedLog(log);
+      dispatch(action);
+    })
+   
   }
 
   handleDeletingLog = (id) => {
@@ -129,4 +144,4 @@ const mapStateToProps = state => {
 
 LogControl = connect(mapStateToProps)(LogControl)
 
-export default LogControl;
+export default withFirestore(LogControl);
