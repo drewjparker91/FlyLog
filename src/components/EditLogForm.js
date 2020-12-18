@@ -1,13 +1,17 @@
 import React from "react";
 import ReusableForm from "./ReusableForm";
 import PropTypes from "prop-types";
+import { useFirestore } from 'react-redux-firebase';
+
 
 function EditLogForm(props) {
+  const firestore = useFirestore();
   const { log } = props;
 
   function handleEditLogFormSubmission(event) {
     event.preventDefault();
-    props.onEditLog({
+    props.onEditLog();
+    const propertiesToUpdate = {
       author: event.target.author.value,
       location: event.target.location.value,
       species: event.target.species.value,
@@ -15,9 +19,10 @@ function EditLogForm(props) {
       weight: event.target.weight.value,
       fly: event.target.fly.value,
       waterCond: event.target.waterCond.value,
-      createdAt: log.createdAt,
-      id: log.id
-    });
+      // createdAt: log.createdAt,
+      // id: log.id
+    }
+    return firestore.update({collection: 'logs', doc: log.id},propertiesToUpdate)
   }
 
   return (
