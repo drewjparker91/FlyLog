@@ -1,10 +1,9 @@
 import React from 'react';
-import { v4 } from 'uuid';
+
 import PropTypes from "prop-types";
 import ReusableForm from "./ReusableForm";
+import { useFireStore } from 'react-redux-firebase'
 
-const log = {}
-log.id = v4()
 
 function NewLogForm(props){
 
@@ -19,20 +18,27 @@ function NewLogForm(props){
   }
   const today = new Date();
   const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+  const firestore = useFirestore();
 
-  function handleNewLogFormSubmission(event) {
+  function addLogToFirestore(event) {
     event.preventDefault();
-    props.onNewLogCreation({
-      author: event.target.author.value,
-      location: event.target.location.value,
-      species: event.target.species.value,
-      length: event.target.length.value,
-      weight: event.target.weight.value,
-      fly: event.target.fly.value,
-      waterCond: event.target.waterCond.value,
-      createdAt: date,
-      id: v4()
-    });
+  
+
+    props.onNewLogCreation();
+
+    return firestore.collection('logs').add(
+      {
+        author: event.target.author.value,
+        location: event.target.location.value,
+        species: event.target.species.value,
+        length: event.target.length.value,
+        weight: event.target.weight.value,
+        fly: event.target.fly.value,
+        waterCond: event.target.waterCond.value,
+        createdAt: date,
+        timeOpen:firestore.FieldValue.serverTimestamp()
+      }
+    );
   }
 
   return (
@@ -49,6 +55,7 @@ function NewLogForm(props){
     </React.Fragment>
   );
 }
+
 
 NewLogForm.propTypes = {
   onNewLogCreation: PropTypes.func

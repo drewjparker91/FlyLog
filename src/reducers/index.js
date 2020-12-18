@@ -8,7 +8,8 @@ const rootReducer = combineReducers({
   formVisibleOnPage: formVisibleReducer,
   masterLogList: logListReducer,
   selectedLog: selectedLogReducer,
-  editing: editLogReducer
+  editing: editLogReducer,
+  firestore: firestoreReducer
 });
 
 export default rootReducer;
