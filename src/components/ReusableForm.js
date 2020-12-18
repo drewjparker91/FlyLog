@@ -7,9 +7,8 @@ function ReusableForm(props){
 
   const formStyle = {
    align: 'center',
-   backgroundColor: '#DEC0AA'
-  //  top: 150,
-  //  left: 400
+   backgroundColor: '#DEC0AA',
+   fontFamily: 'times'
   }
 
   return (
