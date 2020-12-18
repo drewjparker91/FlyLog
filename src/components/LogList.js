@@ -51,4 +51,4 @@ LogList.propTypes = {
   onLogSelection: PropTypes.func
 }
 
-export default LogList;
+export default LogList;  
