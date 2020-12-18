@@ -53,18 +53,17 @@ class LogControl extends React.Component {
         createdAt: log.get("createdAt"),
         id: log.id
       }
-      const action = a.selectedLog(log);
+      const action = a.selectedLog(firestoreLog);
       dispatch(action);
     })
    
   }
 
   handleDeletingLog = (id) => {
+    this.props.firestore.delete({collection: 'logs', doc: id});
     const {dispatch} = this.props;
-    const action = a.deleteLog(id)
-    const action2 = a.unselectLog
+    const action = a.unselectLog
     dispatch(action);
-    dispatch(action2);
   }
 
   handleEditClick = () => {
@@ -73,15 +72,13 @@ class LogControl extends React.Component {
     dispatch(action);
   }
 
-  // handleEditingLogInList = (logToEdit) => {
-  //   const {dispatch} = this.props;
-  //   const action = a.addLog(logToEdit);
-  //   const action2 = a.unselectLog;
-  //   const action3 = a.toggleEditForm;
-  //   dispatch(action);
-  //   dispatch(action2);
-  //   dispatch(action3);
-  // }
+  handleEditingLogInList = (logToEdit) => {
+    const {dispatch} = this.props;   
+    const action = a.unselectLog;
+    const action2 = a.toggleEditForm;  
+    dispatch(action);
+    dispatch(action2);
+  }
 
   render(){
     let currentlyVisibleState = null;
@@ -135,7 +132,6 @@ LogControl.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    masterLogList: state.masterLogList,
     formVisibleOnPage: state.formVisibleOnPage,
     selectedLog: state.selectedLog,
     editing: state.editing
