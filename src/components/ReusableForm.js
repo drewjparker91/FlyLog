@@ -68,13 +68,6 @@ function ReusableForm(props){
               defaultValue = {props.waterCond ? props.waterCond : ''}
               // placeholder = "Water Conditions"
               />
-              <h5> Weather Conditions </h5>
-              <input
-              type="text"
-              name="weather"
-              defaultValue = {props.weather ? props.weather : ''}
-              // placeholder = "Weather Conditions"
-              />
               <button type='submit'>{props.buttonText}</button>
             </form>
           </div>

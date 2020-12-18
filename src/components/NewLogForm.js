@@ -30,7 +30,6 @@ function NewLogForm(props){
       weight: event.target.weight.value,
       fly: event.target.fly.value,
       waterCond: event.target.waterCond.value,
-      weather: event.target.weather.value,
       createdAt: date,
       id: v4()
     });

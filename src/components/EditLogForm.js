@@ -15,7 +15,6 @@ function EditLogForm(props) {
       weight: event.target.weight.value,
       fly: event.target.fly.value,
       waterCond: event.target.waterCond.value,
-      weather: event.target.weather.value,
       createdAt: log.createdAt,
       id: log.id
     });
@@ -32,7 +31,6 @@ function EditLogForm(props) {
         weight={log.weight}
         fly={log.fly}
         waterCond={log.waterCond}
-        weather={log.weather}
         buttonText="Save Changes"
       />
     </React.Fragment>

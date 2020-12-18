@@ -15,7 +15,6 @@ function LogDetail(props){
         <h5>Length: {log.length} Weight: {log.weight}</h5>
         <h5>Fly Used: {log.fly}</h5>
         <h5>Water Condition: {log.waterCond}</h5>
-        <h5>Weather Conditions: {log.weather}</h5>
         <h5>Date Caught: {log.createdAt}</h5>
         <Button variant="warning" onClick={props.onClickingEdit}>Edit Post</Button>
         <Button variant="danger" onClick={() => onClickingDelete(log.id)}>Delete Post</Button>

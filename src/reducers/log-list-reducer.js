@@ -1,7 +1,7 @@
 import * as a from './../actions/ActionTypes';
 
 export default (state = {}, action) => {
-  const {author, location, species, length, weight, fly, waterCond, weather, createdAt, id} = action;
+  const {author, location, species, length, weight, fly, waterCond, createdAt, id} = action;
   switch (action.type) {
   case a.ADD_LOG:
     return Object.assign({}, state, {
@@ -13,7 +13,6 @@ export default (state = {}, action) => {
         weight: weight,
         fly: fly,
         waterCond: waterCond,
-        weather: weather,
         createdAt: createdAt,
         id: id
       }

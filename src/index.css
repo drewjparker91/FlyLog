@@ -73,11 +73,6 @@ input {
   
 }
 
-.rounded-input {
-  padding: 10px;
-  border-radius:10px;
-}
-
 .card {
   margin-bottom: 50px;
   box-shadow: 0 0 10px 0px black;
