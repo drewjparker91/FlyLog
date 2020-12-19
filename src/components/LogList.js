@@ -11,7 +11,7 @@ function LogList(props){
 
   const topListStyle = {
     textAlign: "center",
-    fontFamily: 'Berkshire Swash',
+    // fontFamily: 'Berkshire Swash',
     color: 'rgba(42,82,66)',
     marginBottom: '20px'
   }
@@ -25,21 +25,29 @@ function LogList(props){
   if(isLoaded(logs)) {
     return (
       <React.Fragment>
-        {logs.map((log) => {
-          return <Log
-            whenLogClicked = { props.onLogSelection }
-            author={log.author}
-            location={log.location}
-            date={log.author}
-            species={log.species}
-            length={log.length}
-            weight={log.weight}
-            fly={log.fly}
-            waterCond={log.waterCond}
-            createdAt={log.createdAt}
-            id={log.id}
-            key={log.id}/>  
-        })}
+        <div style={topListStyle}>
+          <h1>Recent Catches</h1>
+        </div>
+        <Col>
+          <div class='card'>
+            {logs.map((log) => {
+              
+                return <Log
+                  whenLogClicked = { props.onLogSelection }
+                  author={log.author}
+                  location={log.location}
+                  date={log.author}
+                  species={log.species}
+                  length={log.length}
+                  weight={log.weight}
+                  fly={log.fly}
+                  waterCond={log.waterCond}
+                  createdAt={log.createdAt}
+                  id={log.id}
+                  key={log.id}/>             
+            })}
+          </div>
+        </Col>
       </React.Fragment>
     );
   } else {
