@@ -1,11 +1,13 @@
 import React from 'react'
 import './Sidebar.css'  
 
-export const Sidebar = ({ width, height, children }) => {
+function Sidebar = ({}) => {
 
   return (
-    <div className="side-bar" style={{width: width, minHeight: height}}>
-      <React.Fragment>{children}</React.Fragment>
+    <div>
+      
     </div>
   );
 };
+
+export default Sidebar;
