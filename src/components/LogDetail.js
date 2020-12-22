@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Button from "react-bootstrap/button"
-import Comment from './Comment'
+import CommentList from './CommentList'
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import firebase from '../firebase';
 import {isLoaded} from "react-redux-firebase"
@@ -33,15 +33,12 @@ const [comments] = useCollectionData(commentsRef)
           <Button variant="warning" onClick={props.onClickingEdit}>Edit Post</Button>
           <Button variant="danger" onClick={() => onClickingDelete(log.id)}>Delete Post</Button>
           <Button variant="success" onClick={props.onClickingComment}>Comment on the post!</Button>
-
-          <div class='card'>
-            {comments.map((comment) => {
-              
-                return <Comment
-                body={comment.body}
-                />             
-            })}
+          <div className='commentss'>
+            <CommentList
+            comments={comments}
+            />
           </div>
+          
         </React.Fragment>
       </div>
     );
