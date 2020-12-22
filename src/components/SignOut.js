@@ -27,5 +27,6 @@ function SignOut() { //sign out function
     </div>
   )
 }
+console.log(user)
 
 export default SignOut;

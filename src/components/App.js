@@ -10,6 +10,7 @@ import 'firebase/auth'
 function App(){
   const auth = firebase.auth();
   const [user] = useAuthState(auth);
+  
   return (
     <React.Fragment>
       <div className='contain'>
@@ -33,5 +34,6 @@ function App(){
   );
   }
 
+  console.log([user])
 export default App;
 

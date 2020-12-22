@@ -10,11 +10,13 @@ function Signin() {
     const provider = new firebase.auth.GoogleAuthProvider();
     auth.signInWithPopup(provider);
   }
-
+  
   return (
     <button onClick={signInWithGoogle}>Sign in with Google</button>
   )
 }
+
+
 
 // function SignOut() { //sign out function
 //   return auth.currentUser && (

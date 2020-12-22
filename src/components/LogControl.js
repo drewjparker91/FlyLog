@@ -79,7 +79,7 @@ class LogControl extends React.Component {
     dispatch(action);
     dispatch(action2);
   }
-
+  
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
