@@ -16,18 +16,20 @@ function NewLogForm(props){
   const newFormStyle = {
     textAlign: 'center'
   }
+
   const today = new Date();
   const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
   const firestore = useFirestore();
+  const {uid} =props
 
   function addLogToFirestore(event) {
     event.preventDefault();
   
-
     props.onNewLogCreation();
 
     return firestore.collection('logs').add(
       {
+        uid: uid,
         author: event.target.author.value,
         location: event.target.location.value,
         species: event.target.species.value,

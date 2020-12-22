@@ -6,7 +6,7 @@
 #fart {
   color: white;
   background-color: #2b473c;
-  font-size: 20px;
+  font-size: 15px;
   padding: 10px 10px;
   border-radius: 5px;
   margin: 10px 0px;
@@ -73,13 +73,12 @@ input {
   
 }
 
-.card {
+/* .card {
   margin-bottom: 50px;
   box-shadow: 0 0 10px 0px black;
   width: 80%;
   border: none
-    /* position: relative; */
-}
+} */
 
 
 

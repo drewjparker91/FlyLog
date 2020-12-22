@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Log from "./Log";
+import LogListStyle from './LogListStyle.css'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { useSelector } from 'react-redux'
@@ -9,12 +10,12 @@ import { useFirestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase'
 
 function LogList(props){
 
-  const topListStyle = {
-    textAlign: "center",
-    // fontFamily: 'Berkshire Swash',
-    color: 'rgba(42,82,66)',
-    marginBottom: '20px'
-  }
+  // const topListStyle = {
+  //   textAlign: "center",
+  //   // fontFamily: 'Berkshire Swash',
+  //   color: 'rgba(42,82,66)',
+  //   marginBottom: '20px'
+  // }
 
   useFirestoreConnect([
     { collection: 'logs' }
@@ -25,7 +26,7 @@ function LogList(props){
   if(isLoaded(logs)) {
     return (
       <React.Fragment>
-        <div style={topListStyle}>
+        <div className='topListStyle'>
           <h1>Recent Catches</h1>
         </div>
         <Col>

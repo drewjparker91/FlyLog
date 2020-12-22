@@ -10,13 +10,13 @@ import * as a from './../actions';
 // import { withFirestore } from 'react-redux-firebase'
 
 import { withFirestore, isLoaded } from 'react-redux-firebase';
-import LogListPersonal from './LogListPersonal'
+import LogListPersonal from './LogListPersonal';
 
-const buttonPosition = {
-  position: 'fixed',
-  bottom: 80,
-  legft: 50
-}
+// const buttonPosition = {
+//   position: 'fixed',
+//   bottom: 80,
+//   legft: 50
+// }
 
 class LogControl extends React.Component {
   
@@ -125,23 +125,35 @@ class LogControl extends React.Component {
       } else if (this.props.formVisibleOnPage) {
         currentlyVisibleState = 
         <NewLogForm
+        uid = {auth.currentUser.uid}
         onNewLogCreation = {this.handleAddingNewLogToList}
         />
         buttonText = "Back to Log List"
       } else {
-        currentlyVisibleState = 
-        <LogList
-        logList = {this.props.masterLogList}
-        onLogSelection = {this.handleChangingSelectedLog}
-        />
+        if (this.props.index) {
+          currentlyVisibleState = 
+          <LogList
+          handleLogListToggle = {this.handleLogListToggle}
+          logList = {this.props.masterLogList}
+          onLogSelection = {this.handleChangingSelectedLog}
+          />        
+        } else {
+          currentlyVisibleState = 
+          <LogListPersonal
+          handleLogListToggle = {this.handleLogListToggle}
+          uid = {auth.currentUser.uid}
+          logList = {this.props.masterLogList}
+          onLogSelection = {this.handleChangingSelectedLog}
+          />
+        }
         buttonText = "Add a new log"
       }
       return (
         <React.Fragment>
           {currentlyVisibleState}
-          <div style={buttonPosition}>
+          {/* <div style={buttonPosition}> */}
             <button id="fart" onClick={this.handleClick}>{buttonText}</button>
-          </div>
+          {/* </div> */}
         </React.Fragment>
       );
       }  
@@ -152,14 +164,16 @@ LogControl.propTypes = {
   masterLogList: PropTypes.object,
   formVisibleOnPage: PropTypes.bool,
   selectedLog: PropTypes.object,
-  editing: PropTypes.bool
+  editing: PropTypes.bool,
+  index: PropTypes.bool
 };
 
 const mapStateToProps = state => {
   return {
     formVisibleOnPage: state.formVisibleOnPage,
     selectedLog: state.selectedLog,
-    editing: state.editing
+    editing: state.editing,
+    index: state.index
   }
 }
 
