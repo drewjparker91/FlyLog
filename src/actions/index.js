@@ -40,4 +40,8 @@ export const unselectLog = ({
   type: a.UNSELECT_LOG
 })
 
+export const toggleLogLists = () => ({
+  type: a.TOGGLE_LOG_LISTS
+})
+
 

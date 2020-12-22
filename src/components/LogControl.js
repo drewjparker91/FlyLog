@@ -7,8 +7,10 @@ import Button from 'react-bootstrap/button';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as a from './../actions';
-import { withFirestore } from 'react-redux-firebase'
-import Log from './Log';
+// import { withFirestore } from 'react-redux-firebase'
+
+import { withFirestore, isLoaded } from 'react-redux-firebase';
+import LogListPersonal from './LogListPersonal'
 
 const buttonPosition = {
   position: 'fixed',
@@ -80,46 +82,69 @@ class LogControl extends React.Component {
     dispatch(action2);
   }
   
+  handleLogListToggle = () => {
+    const {dispatch} = this.props;
+    const action = a.toggleLogLists();
+    dispatch(action);
+  }
+
   render(){
-    let currentlyVisibleState = null;
-    let buttonText = null;
-    if (this.props.editing) {
-      currentlyVisibleState = 
-      <EditLogForm
-      log = {this.props.selectedLog}
-      onEditLog = {this.handleEditingLogInList}
-      />
-      buttonText = "Return to Log List"
-    } else if (this.props.selectedLog != null) {
-      currentlyVisibleState = 
-      <LogDetail
-      log = {this.props.selectedLog}
-      onClickingDelete = {this.handleDeletingLog}
-      onClickingEdit = {this.handleEditClick}
-      />
-      buttonText = "Back to Log List"
-    } else if (this.props.formVisibleOnPage) {
-      currentlyVisibleState = 
-      <NewLogForm
-      onNewLogCreation = {this.handleAddingNewLogToList}
-      />
-      buttonText = "Back to Log List"
-    } else {
-      currentlyVisibleState = 
-      <LogList
-      logList = {this.props.masterLogList}
-      onLogSelection = {this.handleChangingSelectedLog}
-      />
-      buttonText = "Add a new log"
+    const auth = this.props.firebase.auth();
+    if(!isLoaded(auth)){
+      return (
+        <React.Fragment>
+          <h1>Loading...</h1>
+        </React.Fragment>
+      )
     }
-    return (
-      <React.Fragment>
-        {currentlyVisibleState}
-        <div style={buttonPosition}>
-          <button id="fart" onClick={this.handleClick}>{buttonText}</button>
-        </div>
-      </React.Fragment>
-    );
+    if ((isLoaded(auth)) && (auth.currentUser == null)){
+      return(
+        <React.Fragment>
+          <h1>Welcome to Fly Log, You must be signed in to access the queue.</h1>
+        </React.Fragment>
+      )
+    }
+    if ((isLoaded(auth)) && (auth.currentUser != null)){
+      let currentlyVisibleState = null;
+      let buttonText = null;
+      if (this.props.editing) {
+        currentlyVisibleState = 
+        <EditLogForm
+        log = {this.props.selectedLog}
+        onEditLog = {this.handleEditingLogInList}
+        />
+        buttonText = "Return to Log List"
+      } else if (this.props.selectedLog != null) {
+        currentlyVisibleState = 
+        <LogDetail
+        log = {this.props.selectedLog}
+        onClickingDelete = {this.handleDeletingLog}
+        onClickingEdit = {this.handleEditClick}
+        />
+        buttonText = "Back to Log List"
+      } else if (this.props.formVisibleOnPage) {
+        currentlyVisibleState = 
+        <NewLogForm
+        onNewLogCreation = {this.handleAddingNewLogToList}
+        />
+        buttonText = "Back to Log List"
+      } else {
+        currentlyVisibleState = 
+        <LogList
+        logList = {this.props.masterLogList}
+        onLogSelection = {this.handleChangingSelectedLog}
+        />
+        buttonText = "Add a new log"
+      }
+      return (
+        <React.Fragment>
+          {currentlyVisibleState}
+          <div style={buttonPosition}>
+            <button id="fart" onClick={this.handleClick}>{buttonText}</button>
+          </div>
+        </React.Fragment>
+      );
+      }  
   }
 }
 
