@@ -3,12 +3,12 @@ import NewLogForm from './NewLogForm';
 import LogList from './LogList';
 import LogDetail from './LogDetail';
 import EditLogForm from './EditLogForm';
-import Button from 'react-bootstrap/button';
+// import Button from 'react-bootstrap/button';
+import Comment from './Comment';
+// import CommentForm from './CommentForm';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as a from './../actions';
-// import { withFirestore } from 'react-redux-firebase'
-
 import { withFirestore, isLoaded } from 'react-redux-firebase';
 import LogListPersonal from './LogListPersonal';
 
@@ -24,9 +24,12 @@ class LogControl extends React.Component {
 
   handleClick = () => {
     const { dispatch } = this.props
-    if (this.props.selectedLog != null) {     
-      const action = a.unselectLog
+    if (this.props.comment) {
+      const action = a.toggleComment();
       dispatch(action);
+    } else if (this.props.selectedLog != null) {     
+      const action2 = a.unselectLog
+      dispatch(action2);
     } else {
       const action3 = a.toggleNewForm
       dispatch(action3);
@@ -88,6 +91,18 @@ class LogControl extends React.Component {
     dispatch(action);
   }
 
+  handleCommentClick = () => {
+    const {dispatch} = this.props
+    const action = a.toggleComment();
+    dispatch(action);
+  }
+
+  handleSubmitComment = () => {
+    const {dispatch} = this.props;
+    const action = a.toggleComment();
+    dispatch(action);
+  }
+
   render(){
     const auth = this.props.firebase.auth();
     if(!isLoaded(auth)){
@@ -107,7 +122,14 @@ class LogControl extends React.Component {
     if ((isLoaded(auth)) && (auth.currentUser != null)){
       let currentlyVisibleState = null;
       let buttonText = null;
-      if (this.props.editing) {
+      if (this.props.comment) {
+        currentlyVisibleState = 
+        <Comment
+        log = {this.props.selectedLog}
+        onSubmitComment = {this.handleSubmitComment}
+        />
+        buttonText = 'Return Home'
+      } else if (this.props.editing) {
         currentlyVisibleState = 
         <EditLogForm
         log = {this.props.selectedLog}
@@ -120,6 +142,7 @@ class LogControl extends React.Component {
         log = {this.props.selectedLog}
         onClickingDelete = {this.handleDeletingLog}
         onClickingEdit = {this.handleEditClick}
+        onClickingComment = {this.handleCommentClick}
         />
         buttonText = "Back to Log List"
       } else if (this.props.formVisibleOnPage) {
@@ -165,7 +188,8 @@ LogControl.propTypes = {
   formVisibleOnPage: PropTypes.bool,
   selectedLog: PropTypes.object,
   editing: PropTypes.bool,
-  index: PropTypes.bool
+  index: PropTypes.bool,
+  comment: PropTypes.bool
 };
 
 const mapStateToProps = state => {
@@ -173,7 +197,8 @@ const mapStateToProps = state => {
     formVisibleOnPage: state.formVisibleOnPage,
     selectedLog: state.selectedLog,
     editing: state.editing,
-    index: state.index
+    index: state.index,
+    comment: state.comment
   }
 }
 

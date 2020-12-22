@@ -2,10 +2,10 @@ import formVisibleReducer from './form-visible-reducer'
 import logListReducer from './log-list-reducer';
 import selectedLogReducer from './selected-log-reducer';
 import editLogReducer from './edit-log-reducer';
-import toggleLogList from './toggle-log-lists';
 import { combineReducers } from 'redux';
 import { firestoreReducer } from 'redux-firestore';
 import toggleLogLists from './toggle-log-lists';
+import commentReducer from './comment-reducer';
 
 
 const rootReducer = combineReducers({
@@ -14,6 +14,7 @@ const rootReducer = combineReducers({
   selectedLog: selectedLogReducer,
   editing: editLogReducer,
   index: toggleLogLists,
+  comment: commentReducer,
   firestore: firestoreReducer
   
 });

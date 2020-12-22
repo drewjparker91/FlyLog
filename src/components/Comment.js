@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CommentForm from './CommentForm';
-import { useFirestore } from './react-redux-firebase';
+import { useFirestore } from 'react-redux-firebase';
+
 
 function Comment(props){
   const { log } = props;
   const firestore = useFirestore();
 
   function addCommentsToFirestore(event){
-    event.preventDefaul();
+    event.preventDefault();
 
     props.onSubmitComment();
 

@@ -44,4 +44,8 @@ export const toggleLogLists = () => ({
   type: a.TOGGLE_LOG_LISTS
 })
 
+export const toggleComment = () => ({
+  type: a.TOGGLE_COMMENT
+})
+
 
