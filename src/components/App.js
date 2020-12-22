@@ -32,8 +32,7 @@ function App(){
       </div>
     </React.Fragment>
   );
-  }
+}
 
-  console.log([user])
 export default App;
 

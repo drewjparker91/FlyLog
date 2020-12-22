@@ -48,6 +48,7 @@ function LogList(props){
             })}
           </div>
         </Col>
+        <button onClick={props.handleLogListToggle}>See Your Catches</button>
       </React.Fragment>
     );
   } else {
