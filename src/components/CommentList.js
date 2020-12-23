@@ -22,13 +22,15 @@ function CommentList(props){
           <h1>Comments</h1>
         {/* </div> */}
         <Col>
-          <div class='card'>
+          
             {comments.map((comment) => { 
               return (
-                <p>{comment.body}</p>
+                <div class='card'>
+                  <p>{comment.body}</p>
+                </div>
               )       
             })}
-          </div>
+         
         </Col>
       </React.Fragment>
     );

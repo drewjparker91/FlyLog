@@ -8,6 +8,8 @@ import {isLoaded} from "react-redux-firebase"
 
 
 function LogDetail(props){
+
+  
   const firestore = firebase.firestore()
   const {log, onClickingDelete} = props;
 const commentsRef = firestore.collection('comments').where('logId', '==', log.id)
@@ -30,9 +32,14 @@ const [comments] = useCollectionData(commentsRef)
           <h5>Fly Used: {log.fly}</h5>
           <h5>Water Condition: {log.waterCond}</h5>
           <h5>Date Caught: {log.createdAt}</h5>
-          <Button variant="warning" onClick={props.onClickingEdit}>Edit Post</Button>
+          {/* <Button variant="warning" onClick={props.onClickingEdit}>Edit Post</Button>
           <Button variant="danger" onClick={() => onClickingDelete(log.id)}>Delete Post</Button>
-          <Button variant="success" onClick={props.onClickingComment}>Comment on the post!</Button>
+          <Button variant="success" onClick={props.onClickingComment}>Comment on the post!</Button> */}
+        
+            <button onClick={props.onClickingEdit}>Edit Post</button>
+            <button onClick={() => onClickingDelete(log.id)}>Delete Post</button>
+            <button onClick={props.onClickingComment}>Comment on the post!</button>
+          
           <div className='commentss'>
             <CommentList
             comments={comments}

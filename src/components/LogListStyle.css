@@ -4,10 +4,11 @@
 }
 
 .card {
-  margin-bottom: 50px;
+  margin-bottom: 100px;
   box-shadow: 0 0 10px 0px black;
   width: 80%;
   border: none;
+
 }
 
 .topList {
