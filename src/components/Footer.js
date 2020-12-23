@@ -4,7 +4,7 @@ function Footer() {
   return (
     <React.Fragment>
       <div id="footer">
-        <p>This site is only an example project for <a href="https://www.epicodus.com/">Epicodus</a></p>
+        <p>Track your catches today!</p>
       </div>
     </React.Fragment>
   );

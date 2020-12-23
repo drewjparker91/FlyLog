@@ -17,6 +17,7 @@ function Log(props){
           <div onClick = {() => props.whenLogClicked(props.id)}>
             <h3>{props.author}</h3>
             <p>Caught On: {props.createdAt}</p>
+            <hr/>
           </div>
         </div>
       

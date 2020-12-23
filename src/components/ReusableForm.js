@@ -10,10 +10,10 @@ function ReusableForm(props){
    backgroundColor: '#DEC0AA',
    fontFamily: 'times'
   }
-
+  
   return (
     <React.Fragment>
-      <Card style ={{ border: 'none', textAlign: 'center' }}>
+      <Card style ={{ backgroundColor: '#D4916D', border: 'none', textAlign: 'center' }}>
       <div style={formStyle}>
         
           <div className="container">

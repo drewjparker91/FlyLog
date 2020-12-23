@@ -7,20 +7,12 @@ import { useFirestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase';
 
 function CommentList(props){
   const {comments} = props;
-
-  // useFirestoreConnect([
-  //   { collection: 'comments' }
-  // ]);
-
-  // const comments = useSelector(state => state.firestore.ordered.comments);
   
   if(isLoaded(comments)) {
     
     return (
       <React.Fragment>
-        {/* <div className='topListStyle'> */}
           <h1>Comments</h1>
-        {/* </div> */}
         <Col>
           
             {comments.map((comment) => { 

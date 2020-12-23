@@ -12,7 +12,7 @@ function SignOut() { //sign out function
   const auth = firebase.auth();
 
   return auth.currentUser && (
-    <button onClick={() => auth.signOut()}>Sign Out</button>
+    <button id="fart" onClick={() => auth.signOut()}>Sign Out</button>
   )
 }
 

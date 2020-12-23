@@ -30,6 +30,11 @@ class LogControl extends React.Component {
     } else if (this.props.selectedLog != null) {     
       const action2 = a.unselectLog
       dispatch(action2);
+    } else if (this.props.editing) {
+      const action4 = a.toggleEditForm
+      const action5 = a.unselectLog
+      dispatch(action4);
+      dispatch(action5);
     } else {
       const action3 = a.toggleNewForm
       dispatch(action3);
@@ -102,6 +107,8 @@ class LogControl extends React.Component {
     const action = a.toggleComment();
     dispatch(action);
   }
+
+  
 
   render(){
     const auth = this.props.firebase.auth();

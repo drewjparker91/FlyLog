@@ -52,7 +52,7 @@ function LogList(props){
             })}
           </div>
         </Col>
-        <button onClick={props.handleLogListToggle}>See Your Catches</button>
+        <button id="fart" onClick={props.handleLogListToggle}>See Your Catches</button>
       </React.Fragment>
     );
   } else {

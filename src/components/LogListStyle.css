@@ -1,6 +1,7 @@
 .topListStyle {
   color: rgba(42,82,66);
   margin-bottom: '20px';
+  font-family: 'Sniglet';
 }
 
 .card {
@@ -14,5 +15,6 @@
 .topList {
   color: rgba(42,82,66);
   margin-bottom: 20px;
+  font-family: 'Sniglet';
 }
 
