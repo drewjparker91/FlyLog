@@ -3,13 +3,18 @@
 
 ## Description
 
-Day One I was able to get the main skeleton of the app up and do some minor styling. Currently looking at importing stylesheets but need to read more about them.  Also did a lot of research in the afternoon about how to pin locations using the Google API.
+Fly Log is a Reactjs/firebase app that helps fisherman log their catches.  Updates will be made to allow users to upload images of their catches, and be able to track the locations of their catches!
 
-# Getting Started with Create React App
+## Setup/Installation Requirements
+
+1. Clone this repository onto your computer:
+    "git clone https://github.com/drewjparker91/https://github.com/drewjparker91/FlyLog.git"
+2. Navigate into the "fly-log" directory in Visual Studio Code or preferred text editor:
+3. Open the project by typing "code ." while in the previous directory in your terminal.
+4. Open your computer's terminal and navigate to the directory bearing the name of the program and containing the top level subdirectories and files.
+5. Type "npm install" in your console to install necessary dependencies and allow use of the following scripts.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
 
 In the project directory, you can run:
 
@@ -75,3 +80,32 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Known Bugs
+* No Known bugs at this time
+
+## Support and contact details
+
+* Email: drewjparker91@gmail.com
+
+
+## Technologies Used
+
+* Visual Studio Code
+* HTML
+* CSS
+* Bootstrap
+* React
+* Firebase
+
+### License
+
+Copyright (c) 2020 **_Drew Parker_**
+
+This software is licensed under the MIT license.

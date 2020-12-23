@@ -10,6 +10,9 @@ import { useFirestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase'
 
 function LogList(props){
 
+  const cardstyle = {
+    marginTop: '20px'
+  }
   // const topListStyle = {
   //   textAlign: "center",
   //   // fontFamily: 'Berkshire Swash',
@@ -30,7 +33,7 @@ function LogList(props){
           <h1>Recent Catches</h1>
         </div>
         <Col>
-          <div class='card'>
+          <div class='card' style={cardstyle}>
             {logs.map((log) => {
               
                 return <Log

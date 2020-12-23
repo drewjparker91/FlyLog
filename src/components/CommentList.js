@@ -13,7 +13,7 @@ function CommentList(props){
   // ]);
 
   // const comments = useSelector(state => state.firestore.ordered.comments);
-  console.log(comments)
+  
   if(isLoaded(comments)) {
     
     return (

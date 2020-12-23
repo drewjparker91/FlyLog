@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { propTypes } from 'react-bootstrap/esm/Image';
 
 function Log(props){
-o
+
   const logStyle = {
     backgroundColor: '#D4916D',
     // border: 0

@@ -29,7 +29,7 @@ function EditLogForm(props) {
     <React.Fragment>
       <ReusableForm
         formSubmissionHandler = {handleEditLogFormSubmission}
-        auther={log.author}
+        author={log.author}
         location={log.location}
         species={log.species}
         length={log.length}
