@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { propTypes } from 'react-bootstrap/esm/Image';
 
 function Log(props){
-
+o
   const logStyle = {
     backgroundColor: '#D4916D',
     // border: 0
@@ -33,7 +33,7 @@ weight: propTypes.string,
 fly: propTypes.string,
 waterCond: propTypes.string,
 createdAt: PropTypes.string,
-// image: PropTypes.symbol,
+//image: PropTypes.symbol,
 id: PropTypes.string,
 whenLogClicked: PropTypes.func
 };
